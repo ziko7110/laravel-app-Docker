@@ -26,4 +26,10 @@ class User extends Authenticatable
         'password',
         'admin_flg', 
     ];
+
+    public function userSave($params)
+    {
+      $isRegist = $this->fill($params)->save();
+      return $isRegist;
+    }
 }
