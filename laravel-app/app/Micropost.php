@@ -20,4 +20,16 @@ class Micropost extends Model
       'user_id',
       'content',
     ];
+
+    public static function getAll()
+    {
+      $microposts = Micropost::all()->sortByDesc('id');
+      return $microposts;
+    }
+
+    public function micropostSave($params)
+    {
+      $isSave = $this->fill($params)->save();
+      return $isSave;
+    }
 }
