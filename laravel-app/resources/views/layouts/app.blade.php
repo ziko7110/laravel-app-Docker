@@ -51,7 +51,7 @@
                  <a class="nav-link" href="{{route('micropost.index')}}">{{ __('ホーム') }}</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" href="">{{ __('ユーザ一覧') }}</a>
+               <a class="nav-link" href="{{route('user.index')}}">{{ __('ユーザ一覧') }}</a>
              </li>
              <li class="nav-item">
                <a class="nav-link" href="">{{ __('投稿') }}</a>
@@ -62,7 +62,7 @@
                </a>
 
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                 <a class="dropdown-item" href="">アカウント変更</a>
+                 <a class="dropdown-item" href="{{route('user.edit', ['user' => Auth::user()->id])}}">アカウント変更</a>
                  <a class="dropdown-item" href=""
                    onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">
